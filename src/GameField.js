@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import shuffle from 'shuffle-array';
 import Navbar from './Navbar';
 import Node from './Node';
@@ -29,7 +29,6 @@ class GameField extends Component {
         this.state.nodes.forEach((node, i) => {
             if (node.id === +e.target.id) {
                 ind = i;
-                break;
             }
         });
         if (this.state.nodes[ind].nodeState === 0) {
@@ -63,14 +62,16 @@ class GameField extends Component {
 
     render() {
         const nodes = this.state.nodes.map((node, ind) => {
-            let color = node.nodeState === 0 ? "grey": node.backgroundColor;
+            let color = node.nodeState === 0 ? "#cfcfcf": node.backgroundColor;
             return <Node id={node.id} key={ind} color={color} onClick={this.handleClick}/>    
         });
         return (
-            <div className="game-field">
+            <Fragment>
                 <Navbar onClick={this.handleRestart} />
-                {nodes}
-            </div>
+                <div className="game-field">
+                    {nodes}
+                </div>
+            </Fragment>
         )
     }
 }
