@@ -31,7 +31,6 @@ class GameField extends Component {
             if (node.id == e.target.id)
                 ind = i;
         });
-        console.log(ind);
         if (this.state.nodes[ind].nodeState === 0) {
             var newNodes = this.state.nodes.slice();
             newNodes[ind].nodeState = 1;
