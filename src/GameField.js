@@ -17,7 +17,6 @@ class GameField extends Component {
             }
         }
         nodes = shuffle(nodes);
-        console.log(nodes);
         this.state = {
             nodes
         }
@@ -28,8 +27,10 @@ class GameField extends Component {
     handleClick(e) {
         var ind;
         this.state.nodes.forEach((node, i) => {
-            if (node.id == e.target.id)
+            if (node.id === +e.target.id) {
                 ind = i;
+                break;
+            }
         });
         if (this.state.nodes[ind].nodeState === 0) {
             var newNodes = this.state.nodes.slice();
