@@ -1,0 +1,13 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: #00838F;
+    font-family: Roboto;
+}
+a {
+    padding: 20px;
+}
+h3 {
+    padding: 0 20px;
+}
